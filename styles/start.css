@@ -1,0 +1,143 @@
+.start {
+    height: 100vh;
+    max-width: 100%;
+    background-image: url('../assets/img/background/texture@1x.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
+    .start {
+        background-image: url('../assets/img/background/texture@2x.png');
+    }
+}
+
+.start__letters-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+    pointer-events: none;
+}
+
+.start__letters {
+    width: 100%;
+}
+
+.start__tornpaper-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72%;
+    height: 200px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.start__tornpaper {
+    width: 100%;
+    height: 100%;
+}
+
+.start__sticker {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.start__sticker-oval {
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    height: var(--sticker-height);
+    transform: rotate(-16deg) translateX(90px);
+}
+
+.start__sticker-round {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: var(--sticker-height);
+    transform: rotate(-16deg) translateX(-100px);
+}
+
+.start__sticker-img {
+    /*width: 100%;*/
+    height: 100%;
+    object-fit: contain;
+}
+
+.start__content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-25%);
+}
+
+.start__title {
+    font-family: var(--title-font);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 51px;
+    text-align: center;
+    color: var(--black-text);
+    margin: 0 0 16px;
+    padding: 0 42px;
+}
+
+.start__title-bordered {
+    border-image: url('../assets/img/text-border.svg') 30 10 round round;
+    /*border-top: none;*/
+    /*border-left: none;*/
+    /*border-right: none;*/
+}
+
+.start__subtitle {
+    font-family: var(--subtitle-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0 0 100px;
+    padding: 0 70px;
+}
+
+.start__arrow {
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    background: none;
+}
+
+.start__arrow-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/*tablet*/
+@media screen and (min-width: 834px) {
+    .start__letters-wrapper {
+        display: block;
+    }
+}
+
+/*tablet end*/
+
+/*desktop*/
+@media screen and (min-width: 1440px) {
+    .start__letters-wrapper {
+        display: block;
+    }
+}
+
+/*desktop end*/
