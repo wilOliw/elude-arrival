@@ -12,7 +12,7 @@
 <div id="app">
     <header class="header">
         <img src="./assets/img/logo/wordmark.svg" alt="Elude" class="header__logo">
-        <button class="btn header__btn">Join Us</button>
+        <button class="btn header__btn" onclick="toggleModal(true)">Join Us</button>
     </header>
     <main class="container">
         <section id="app-start" class="start">
@@ -86,12 +86,12 @@
                             class="arrival__frame-phone"
                         />
                         <div class="arrival__frame-content">
-                                                        <iframe
-                                                            src="https://www.youtube.com/embed/f8BgqvqjC-s?controls=0" frameborder="0"
-                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                            allowfullscreen>
-                                                        </iframe>
-<!--                            <img src="http://elude.co/promo/src/img/phone-2x.15ceee14.png">-->
+                            <iframe
+                                src="https://www.youtube.com/embed/f8BgqvqjC-s?controls=0" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                            <!--                            <img src="http://elude.co/promo/src/img/phone-2x.15ceee14.png">-->
                         </div>
                     </div>
                 </div>
@@ -114,6 +114,14 @@
             © 2019 Elude App. All rights reserved. Privacy Policy & Terms of use
         </p>
     </footer>
+    <div class="modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="toggleModal(false)">
+                <img src="./assets/img/close.svg" alt="" class="modal__close-icon">
+            </button>
+        </div>
+        <div class="modal__layout"></div>
+    </div>
 </div>
 <script lang="js" src="./scripts/scroll.js"></script>
 <script lang="js" src="./scripts/modal.js"></script>
