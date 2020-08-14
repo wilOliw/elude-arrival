@@ -26,7 +26,6 @@ button {
     left: 0;
     right: 0;
     z-index: 11;
-    padding: 10px 26px;
     border-bottom: 1px solid #000000;
 }
 
@@ -93,4 +92,18 @@ button {
     font-size: 14px;
     line-height: 20px;
     color: #000000;
+}
+
+@media screen and (min-width: 1440px) {
+    .header {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 32px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
+        padding: 10px 26px;
+    }
 }

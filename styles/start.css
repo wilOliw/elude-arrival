@@ -15,10 +15,9 @@
 
 .start__letters-wrapper {
     position: absolute;
+    z-index: 1;
     top: 0;
     right: 0;
-    z-index: 1;
-    display: none;
     pointer-events: none;
 }
 
@@ -30,8 +29,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 72%;
-    height: 200px;
     z-index: 2;
     pointer-events: none;
 }
@@ -53,18 +50,11 @@
 
 .start__sticker-oval {
     position: absolute;
-    bottom: 6px;
-    right: 0;
-    height: var(--sticker-height);
     transform: rotate(-16deg) translateX(90px);
 }
 
 .start__sticker-round {
     position: absolute;
-    top: 100px;
-    left: 0;
-    height: var(--sticker-height);
-    transform: rotate(-16deg) translateX(-100px);
 }
 
 .start__sticker-img {
@@ -84,11 +74,8 @@
     font-family: var(--title-font);
     font-style: normal;
     font-weight: 300;
-    font-size: 50px;
-    line-height: 51px;
     text-align: center;
     color: var(--black-text);
-    margin: 0 0 16px;
     padding: 0 42px;
 }
 
@@ -106,7 +93,6 @@
     font-size: 18px;
     line-height: 25px;
     text-align: center;
-    margin: 0 0 100px;
     padding: 0 70px;
 }
 
@@ -137,7 +123,69 @@
 @media screen and (min-width: 1440px) {
     .start__letters-wrapper {
         display: block;
+        top: 240px;
+        right: 43px;
+    }
+    .start__tornpaper-wrapper {
+        width: 54%;
+        height: 360px;
+    }
+    .start__sticker-oval {
+        bottom: 40px;
+        right: 0;
+        height: 200px;
+    }
+    .start__content {
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .start__title {
+        font-size: 90px;
+        line-height: 1.02;
+        margin-bottom: 30px;
+    }
+    .start__subtitle {
+        margin-bottom: 80px;
+    }
+    .start__sticker-round {
+        bottom: 220px;
+        left: 0;
+        transform: rotate(-16deg) translateX(-165px);
     }
 }
 
 /*desktop end*/
+
+/*mobile*/
+@media only screen and (max-width: 768px) {
+    .start__letters-wrapper {
+        display: none;
+    }
+    .start__tornpaper-wrapper {
+        width: 72%;
+        height: 200px;
+    }
+    .start__sticker-oval {
+        bottom: 6px;
+        right: 0;
+        height: var(--sticker-height);
+    }
+    .start__title {
+        font-size: 50px;
+        line-height: 51px;
+        margin-bottom: 16px;
+    }
+    .start__title br {
+        display: none;
+    }
+    .start__subtitle {
+        margin-bottom: 100px;
+    }
+    .start__sticker-round {
+        top: 100px;
+        left: 0;
+        height: var(--sticker-height);
+        transform: rotate(-16deg) translateX(-100px);
+    }
+}
