@@ -24,5 +24,3 @@ function toggleModal(bool) {
 }
 
 $form.addEventListener('submit', formSubmitHandler)
-
-toggleModal(true)
