@@ -1,14 +1,12 @@
 :root {
-    --white-text: #fff;
-    --black-text: #000;
+    --white: #fff;
+    --black: #000;
     --gray-text: #949494;
     --btn-font: LuciferSans, sans-serif;
     --title-font: GTSuper;
     --subtitle-font: SpaceMono;
 
     --theme-color: #EE3524;
-    --media-md: 834px;
-    --media-lg: 1440px;
 
     --sticker-height: 150px;
 }

@@ -29,7 +29,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
 }
 
@@ -75,7 +75,7 @@
     font-style: normal;
     font-weight: 300;
     text-align: center;
-    color: var(--black-text);
+    color: var(--black);
     padding: 0 42px;
 }
 
@@ -111,16 +111,37 @@
 }
 
 /*tablet*/
-@media screen and (min-width: 834px) {
+@media screen and (min-width: 768px) {
     .start__letters-wrapper {
         display: block;
+        top: 340px;
+        right: -42px;
+    }
+
+    .start__title {
+        font-weight: 300;
+        font-size: 70px;
+        line-height: 72px;
+        margin: 0 0 20px;
+    }
+
+    .start__subtitle {
+        font-size: 20px;
+        line-height: 28px;
+        margin: 0 0 120px;
+    }
+
+    .start__sticker-oval {
+    }
+
+    .start__sticker-round {
     }
 }
 
 /*tablet end*/
 
 /*desktop*/
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1260px) {
     .start__letters-wrapper {
         display: block;
         top: 240px;

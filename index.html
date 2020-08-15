@@ -12,18 +12,10 @@
 <div id="app">
     <header class="header">
         <img src="./assets/img/logo/wordmark.svg" alt="Elude" class="header__logo">
-        <button class="btn header__btn" onclick="toggleModal(true)">Join Us</button>
+        <button class="btn header__btn" onclick="toggleModal('form-modal', true)">Join Us</button>
     </header>
     <main class="container">
         <section id="app-start" class="start">
-            <div class="start__letters-wrapper">
-                <img
-                    class="start__letters"
-                    src="assets/img/background/letters@1x.png"
-                    srcset="./assets/img/background/letters@1x.png 1x, ./assets/img/background/letters@2x.png 2x"
-                    alt="Letters"
-                />
-            </div>
             <div class="start__tornpaper-wrapper">
                 <img
                     class="start__tornpaper"
@@ -33,6 +25,14 @@
                 />
             </div>
             <div class="start__sticker">
+                <div class="start__letters-wrapper">
+                    <img
+                        class="start__letters"
+                        src="assets/img/background/letters@1x.png"
+                        srcset="./assets/img/background/letters@1x.png 1x, ./assets/img/background/letters@2x.png 2x"
+                        alt="Letters"
+                    />
+                </div>
                 <div class="start__sticker-oval">
                     <img
                         class="start__sticker-img"
@@ -86,12 +86,12 @@
                             class="arrival__frame-phone"
                         />
                         <div class="arrival__frame-content">
-                            <iframe
-                                src="https://www.youtube.com/embed/f8BgqvqjC-s?controls=0" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
-                            <!--                            <img src="http://elude.co/promo/src/img/phone-2x.15ceee14.png">-->
+                            <!--                                                        <iframe-->
+                            <!--                                                            src="https://www.youtube.com/embed/LXb3EKWsInQ?controls=0" frameborder="0"-->
+                            <!--                                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                            <!--                                                            allowfullscreen>-->
+                            <!--                                                        </iframe>-->
+                            <img src="./assets/img/frame/frame-content.jpg">
                         </div>
                     </div>
                 </div>
@@ -114,17 +114,35 @@
             © 2019 Elude App. All rights reserved. Privacy Policy & Terms of use
         </p>
     </footer>
-    <div class="modal">
+    <div class="modal" id="form-modal">
         <div class="modal__content">
-            <button class="modal__close" onclick="toggleModal(false)">
+            <button class="modal__close" onclick="toggleModal('form-modal', false)">
                 <img src="./assets/img/close.svg" alt="" class="modal__close-icon">
             </button>
+        </div>
+        <div class="modal__layout"></div>
+    </div>
+    <div class="modal" id="submit-modal">
+        <div class="modal__content">
+            <button class="modal__close" onclick="toggleModal('submit-modal', false)">
+                <img src="./assets/img/close.svg" alt="" class="modal__close-icon">
+            </button>
+            <svg class="modal__content-icon" width="152" height="208" viewBox="0 0 152 208" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M75.3339 204.981C34.9812 204.981 2.26953 171.345 2.26953 129.852V78.1476C2.26953 36.6546 34.9812 3.01855 75.3339 3.01855C115.687 3.01855 148.398 36.6546 148.398 78.1476V129.852C148.398 171.345 115.687 204.981 75.3339 204.981Z"
+                    stroke="#000" stroke-width="1.5" stroke-miterlimit="10"/>
+                <path
+                    d="M75.5022 182.402C46.3302 182.402 22.6855 158.089 22.6855 128.093V76.1037C22.6855 46.1072 46.3302 21.7944 75.5022 21.7944C104.674 21.7944 128.319 46.1072 128.319 76.1037V128.093C128.319 158.081 104.674 182.402 75.5022 182.402Z"
+                    stroke="#000" stroke-width="1.5" stroke-miterlimit="10"/>
+                <path d="M22.6855 78.3115H128.319" stroke="#000" stroke-width="1.5" stroke-miterlimit="10"/>
+            </svg>
+            <p class="modal__content-desc">Thanks! We will definitely keep you updated when we launch.</p>
         </div>
         <div class="modal__layout"></div>
     </div>
 </div>
 <script lang="js" src="./scripts/scroll.js"></script>
 <script lang="js" src="./scripts/modal.js"></script>
-<script lang="js" src="./scripts/frame.js"></script>
 </body>
 </html>

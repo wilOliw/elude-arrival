@@ -4,7 +4,7 @@ function scrollBottom(duration = 250) {
 	const startPosition = window.pageYOffset || document.documentElement.scrollTop;
 	let startTime = null;
 
-	function animation (currentTime) {
+	function animation(currentTime) {
 		if (startTime === null) {
 			startTime = currentTime;
 		}
