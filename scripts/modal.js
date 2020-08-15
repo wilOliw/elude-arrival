@@ -5,12 +5,21 @@ const $html = document.getElementsByTagName('html')[0];
 
 $modalContent.innerHTML += arrivalContent;
 
-function formSubmitHandler(e) {
+async function formSubmitHandler(e) {
 	e.preventDefault();
-	const value = e.target[0].value;
-	fetch('../php')
-	toggleModal('submit-modal', true);
-	toggleModal('form-modal', false);
+	const email = e.target[0].value;
+	await fetch(location.origin + '/php/mail.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json;charset=utf-8'
+		},
+		body: JSON.stringify({email})
+	})
+		.then(() => {
+			toggleModal('submit-modal', true);
+			toggleModal('form-modal', false);
+		})
+		.catch(err => alert(err));
 }
 
 function layoutClickHandler(e) {
@@ -22,7 +31,6 @@ function toggleModal(id, bool) {
 	const $modalForm = $modal.getElementsByTagName('form')[0];
 	$html.style.overflow = bool ? 'hidden' : 'auto';
 	if (bool) { // open modal
-		console.log(id)
 		$modal.classList.add('modal--show');
 		if (id === 'form-modal') {
 			$modalForm.addEventListener('submit', formSubmitHandler)

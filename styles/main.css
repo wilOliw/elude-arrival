@@ -95,6 +95,11 @@ button {
     color: var(--black);
 }
 
+.footer__desc > a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .modal {
     background-color: var(--white);
     position: fixed;
