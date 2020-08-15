@@ -18,8 +18,10 @@ function toggleModal(bool) {
 	$html.style.overflow = bool ? 'hidden' : 'auto';
 	if (bool) {
 		// open modal
+		$modalContent.getElementsByTagName('form')[0].addEventListener('submit', formSubmitHandler)
 	} else {
 		// close modal
+		$modalContent.getElementsByTagName('form')[0].removeEventListener('submit', formSubmitHandler)
 	}
 }
 
