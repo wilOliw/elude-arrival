@@ -162,6 +162,7 @@ button {
 
 .modal .arrival__content {
     margin: 0;
+    padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -256,7 +257,7 @@ button {
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1260px) {
     .header {
         max-width: 1260px;
         margin: 0 auto;

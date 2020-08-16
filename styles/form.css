@@ -208,6 +208,8 @@
 
     .modal .arrival__content {
         max-width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .arrival__form {
