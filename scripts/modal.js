@@ -9,17 +9,6 @@ async function formSubmitHandler(e) {
 	e.preventDefault();
 	const url = location.href + 'php/mail.php';
 	const email = e.target[0].value;
-	const request = new XMLHttpRequest();
-	request.open("POST", url, true);
-	request.setRequestHeader("Content-Type", "application/json");
-	request.onreadystatechange = function () {
-		if (request.readyState === 4 && request.status === 200) {
-			var jsonData = JSON.parse(request.response);
-			console.log(jsonData);
-		}
-	};
-	var data = JSON.stringify({"email": email});
-	request.send(data);
 
 	await fetch(url, {
 		method: 'POST',
@@ -40,13 +29,13 @@ function toggleModal(id, bool) {
 	const $modal = document.getElementById(id);
 	const $modalForm = $modal.getElementsByTagName('form')[0];
 	if (bool) { // open modal
-		$html.style.overflow = 'hidden';
+		$html.style.overflowY = 'hidden';
 		$modal.classList.add('modal--show');
 		if (id === 'form-modal') {
 			$modalForm.addEventListener('submit', formSubmitHandler)
 		}
 	} else { // close modal
-		$html.style.overflow = 'auto';
+		$html.style.overflowY = 'auto';
 		$modal.classList.remove('modal--show');
 		if (id === 'form-modal') {
 			$modalForm.removeEventListener('submit', formSubmitHandler)

@@ -129,8 +129,9 @@
 
 @media screen and (min-width: 768px) {
     .arrival {
-        overflow: visible;
+        /*overflow: visible;*/
         padding: 0;
+        max-width: 100%;
     }
     .arrival__inner {
         display: flex;
@@ -189,6 +190,7 @@
 @media screen and (min-width: 1260px) {
     .arrival {
         padding-top: 0;
+        overflow: visible;
     }
 
     .arrival__inner {

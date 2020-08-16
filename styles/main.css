@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 button {
@@ -230,7 +231,7 @@ button {
     }
 
     .footer__socials {
-        margin: 0 -15px;
+        margin: 0 -15px 0 0;
     }
 }
 
