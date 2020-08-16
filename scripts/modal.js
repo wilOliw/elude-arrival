@@ -7,17 +7,16 @@ $modalContent.innerHTML += arrivalContent;
 
 async function formSubmitHandler(e) {
 	e.preventDefault();
-	const url = location.href + 'php/mail.php';
-	const data = JSON.stringify({ email: e.target[0].value });
-	console.log(data);
 
-	await fetch(url, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json;charset=utf-8'
-		},
-		body: data
-	})
+	const url = location.href + 'php/mail.php';
+	const method = 'POST';
+	const headers = {
+		'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+		'Accept': 'application/json, text/javascript, */*; q=0.01'
+	}
+	const body = `mail=${e.target[0].value}`;
+
+	await fetch(url, {method, headers, body})
 		.then((res) => {
 			if (res.ok) {
 				console.log(res)

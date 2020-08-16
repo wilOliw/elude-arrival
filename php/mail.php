@@ -1,20 +1,20 @@
 <?php
 
 if ($_POST) {
-  parse_str($_POST, $user);
+  $user = $_POST;
 
-  //$to_Email = 'hello@voynov.co';
-  $to_Email = 'prgrf@ya.ru';
+  $to_Email = 'pasha@pvoynov.ru';
+  //$to_Email = 'prgrf@ya.ru';
   $subject = 'New Elude Request';
   $headers ="From: Elude Today <hello@elude.co>\nReply-to:hello@elude.co\nContent-Type: text/plain;";
 
-  $message = 'E-mail: '.$user['email'];
+  $message = 'E-mail: '.$user['mail'];
 
   try {
       mail($to_Email, $subject, $message, $headers);
 
       $message = [
-          'text' => sprintf('Hello %s, your message is send.', $user['name'])
+          'text' => sprintf('Hello %s, your message is send.', $user['mail'])
       ];
   } catch (Exception $exception) {
       $message = [
