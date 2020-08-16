@@ -7,9 +7,9 @@ $modalContent.innerHTML += arrivalContent;
 
 async function formSubmitHandler(e) {
 	e.preventDefault();
+	const url = location.href + 'php/mail.php';
 	const email = e.target[0].value;
 	const request = new XMLHttpRequest();
-	const url = location.href + 'php/mail.php';
 	request.open("POST", url, true);
 	request.setRequestHeader("Content-Type", "application/json");
 	request.onreadystatechange = function () {
@@ -18,22 +18,22 @@ async function formSubmitHandler(e) {
 			console.log(jsonData);
 		}
 	};
-
 	var data = JSON.stringify({"email": email});
 	request.send(data);
-	// await fetch(location.href + 'php/mail.php', {
-	// 	method: 'POST',
-	// 	headers: {
-	// 		'Content-Type': 'application/json;charset=utf-8'
-	// 	},
-	// 	body: JSON.stringify({email})
-	// })
-	// 	.then((res) => {
-	// 		console.log(res)
-	// 		toggleModal('submit-modal', true);
-	// 		toggleModal('form-modal', false);
-	// 	})
-	// 	.catch(err => console.error(err));
+
+	await fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json;charset=utf-8'
+		},
+		body: JSON.stringify({email})
+	})
+		.then((res) => {
+			console.log(res)
+			toggleModal('submit-modal', true);
+			toggleModal('form-modal', false);
+		})
+		.catch(err => console.error(err));
 }
 
 function toggleModal(id, bool) {
