@@ -76,12 +76,14 @@
                 <div class="arrival__content">
                     <h2 class="arrival__content-title">The Elude app is preparing for arrival.</h2>
                     <h3 class="arrival__content-subtitle">Join the standby list.</h3>
-                    <form
-                        action="./php/mail.php"
-                        method="post"
-                        id="form"
-                        class="arrival__form">
-                        <input type="email" placeholder="Your Email..." name="email" class="arrival__form-input">
+                    <form id="form" class="arrival__form">
+                        <input
+                            type="email"
+                            placeholder="Your Email..."
+                            name="email"
+                            class="arrival__form-input"
+                            required
+                        />
                         <button class="btn arrival__form-button">Let Me Know</button>
                     </form>
                 </div>
