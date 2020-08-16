@@ -235,14 +235,14 @@ button {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1260px) {
     .header {
         max-width: 1260px;
         padding: 27px 30px;
     }
 
     .container {
-        margin-bottom: -206px;
+        margin-bottom: -120px;
         overflow: hidden;
     }
 

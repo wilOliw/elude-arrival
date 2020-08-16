@@ -54,17 +54,17 @@
 .start__sticker-oval {
     position: absolute;
     transform: rotate(-16deg) translateX(56px);
-    bottom: 52px;
+    bottom: 0;
     right: 0;
     height: var(--sticker-height);
 }
 
 .start__sticker-round {
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 0;
     height: var(--sticker-height);
-    transform: rotate(-16deg) translateX(-100px);
+    transform: rotate(-16deg) translateX(-110px);
 }
 
 .start__sticker-img {
@@ -89,7 +89,7 @@
     padding: 0 42px;
     font-size: 50px;
     line-height: 51px;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
 }
 .start__title br {
     display: none;
@@ -130,14 +130,19 @@
     line-height: 25px;
     text-align: center;
     padding: 0 70px;
+    margin: 0;
 }
 
 .start__arrow {
     margin: 0 auto;
+    /*position: absolute;*/
+    /*bottom: 15%;*/
+    /*left: calc(50% - 30px);*/
     width: 20px;
     height: 20px;
     padding: 20px;
     background: none;
+    transform: translateY(80px);
 }
 
 .start__arrow-icon {
@@ -208,6 +213,10 @@
         font-size: 20px;
         line-height: 28px;
         margin: 0 0 120px;
+    }
+
+    .start__arrow {
+        transform: none;
     }
 
     .start__sticker-oval {

@@ -189,7 +189,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1260px) {
     .arrival__inner {
         max-width: 1000px;
         align-items: flex-start;
@@ -247,7 +247,7 @@
         margin: 0;
         width: 460px;
         height: 740px;
-        transform: translateY(-80px) translateX(-8px);
+        transform: translateX(-8px);
     }
 
     .arrival__frame-content {
@@ -275,7 +275,7 @@
     .arrival__logomark {
         width: 229px;
         height: 313px;
-        top: -71px;
+        /*top: -71px;*/
         left: -50px;
     }
 }
