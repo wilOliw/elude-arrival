@@ -8,19 +8,24 @@ $modalContent.innerHTML += arrivalContent;
 async function formSubmitHandler(e) {
 	e.preventDefault();
 	const url = location.href + 'php/mail.php';
-	const email = e.target[0].value;
+	const data = JSON.stringify({ email: e.target[0].value });
+	console.log(data);
 
 	await fetch(url, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8'
 		},
-		body: JSON.stringify({email})
+		body: data
 	})
 		.then((res) => {
-			console.log(res)
-			toggleModal('submit-modal', true);
-			toggleModal('form-modal', false);
+			if (res.ok) {
+				console.log(res)
+				toggleModal('submit-modal', true);
+				toggleModal('form-modal', false);
+			} else {
+				console.warn(res.status, res.statusText);
+			}
 		})
 		.catch(err => console.error(err));
 }

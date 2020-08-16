@@ -1,18 +1,20 @@
 <?php
-if ($_POST) {
-  // $to_Email = 'hello@elude.co';
-  $to_Email = 'prgrf@ya.ru';
-  $subject = 'New Elude Arrival Request';
-  $headers ="From: Elude Today <hello@elude.co>\nReply-to:hello@eludetoday.com\nContent-Type: text/plain;";
 
-  $message = sprintf('E-mail:', $_POST['email']);
+if ($_POST) {
+  parse_str($_POST, $user);
+
+  //$to_Email = 'hello@voynov.co';
+  $to_Email = 'prgrf@ya.ru';
+  $subject = 'New Elude Request';
+  $headers ="From: Elude Today <hello@elude.co>\nReply-to:hello@elude.co\nContent-Type: text/plain;";
+
+  $message = 'E-mail: '.$user['email'];
 
   try {
-      //mail($to_Email, $subject, $message, $headers);
-      mail_to('prgrf@ya.ru', 'test saita', 'ya ya, test', "From: Elude Today <hello@elude.co>\nReply-to:hello@eludetoday.com\nContent-Type: text/plain;")
+      mail($to_Email, $subject, $message, $headers);
 
       $message = [
-          'text' => sprintf('Hello! Your message is send.'])
+          'text' => sprintf('Hello %s, your message is send.', $user['name'])
       ];
   } catch (Exception $exception) {
       $message = [
@@ -22,5 +24,3 @@ if ($_POST) {
 
   return json_encode($message);
 }
-
-?>
