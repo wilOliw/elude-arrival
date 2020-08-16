@@ -8,34 +8,45 @@ $modalContent.innerHTML += arrivalContent;
 async function formSubmitHandler(e) {
 	e.preventDefault();
 	const email = e.target[0].value;
-	await fetch(location.origin + '/php/mail.php', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json;charset=utf-8'
-		},
-		body: JSON.stringify({email})
-	})
-		.then(() => {
-			toggleModal('submit-modal', true);
-			toggleModal('form-modal', false);
-		})
-		.catch(err => alert(err));
-}
+	const request = new XMLHttpRequest();
+	const url = location.href + 'php/mail.php';
+	request.open("POST", url, true);
+	request.setRequestHeader("Content-Type", "application/json");
+	request.onreadystatechange = function () {
+		if (request.readyState === 4 && request.status === 200) {
+			var jsonData = JSON.parse(request.response);
+			console.log(jsonData);
+		}
+	};
 
-function layoutClickHandler(e) {
-	toggleModal(e.path[1].id, false)
+	var data = JSON.stringify({"email": email});
+	request.send(data);
+	// await fetch(location.href + 'php/mail.php', {
+	// 	method: 'POST',
+	// 	headers: {
+	// 		'Content-Type': 'application/json;charset=utf-8'
+	// 	},
+	// 	body: JSON.stringify({email})
+	// })
+	// 	.then((res) => {
+	// 		console.log(res)
+	// 		toggleModal('submit-modal', true);
+	// 		toggleModal('form-modal', false);
+	// 	})
+	// 	.catch(err => console.error(err));
 }
 
 function toggleModal(id, bool) {
 	const $modal = document.getElementById(id);
 	const $modalForm = $modal.getElementsByTagName('form')[0];
-	$html.style.overflow = bool ? 'hidden' : 'auto';
 	if (bool) { // open modal
+		$html.style.overflow = 'hidden';
 		$modal.classList.add('modal--show');
 		if (id === 'form-modal') {
 			$modalForm.addEventListener('submit', formSubmitHandler)
 		}
 	} else { // close modal
+		$html.style.overflow = 'auto';
 		$modal.classList.remove('modal--show');
 		if (id === 'form-modal') {
 			$modalForm.removeEventListener('submit', formSubmitHandler)

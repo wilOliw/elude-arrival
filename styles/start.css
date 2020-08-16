@@ -96,7 +96,7 @@
 }
 
 .start__title-bordered {
-    border-image: url('../assets/img/text-border.svg') 30 10 round round;
+    border-image: url('../assets/img/text-border_red.svg') 30 10 round round;
     /*border-top: none;*/
     /*border-left: none;*/
     /*border-right: none;*/
@@ -130,7 +130,7 @@
 @media screen and (min-width: 768px) {
     .start__tornpaper-wrapper {
         height: 385px;
-        right: -55px;
+        /*right: -55px;*/
         width: 76%;
     }
 

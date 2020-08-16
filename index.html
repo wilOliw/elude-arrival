@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="./plugins/smtp.js"></script>
     <title>Coming soon!</title>
 </head>
 <body>
@@ -53,7 +54,11 @@
             <div class="start__content">
                 <h1 class="start__title">
                     <span>The</span>
-                    <span class="start__title-bordered">future of <i>travel</i></span><br>
+                    <span class="start__title-bordered">
+                        <span>future of</span>
+                        <i>travel</i>
+                    </span>
+                    <br>
                     <span>takes off soon. . .</span>
                 </h1>
                 <h2 class="start__subtitle">Be the first to board.</h2>
@@ -71,7 +76,11 @@
                 <div class="arrival__content">
                     <h2 class="arrival__content-title">The Elude app is preparing for arrival.</h2>
                     <h3 class="arrival__content-subtitle">Join the standby list.</h3>
-                    <form id="form" class="arrival__form">
+                    <form
+                        action="./php/mail.php"
+                        method="post"
+                        id="form"
+                        class="arrival__form">
                         <input type="email" placeholder="Your Email..." class="arrival__form-input">
                         <button class="btn arrival__form-button">Let Me Know</button>
                     </form>

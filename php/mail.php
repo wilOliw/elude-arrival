@@ -3,6 +3,8 @@
 if ($_POST) {
   $user = $_POST;
 
+  return $user;
+
   // $to_Email = 'hello@elude.co';
   $to_Email = 'prgrf@ya.ru';
   $subject = 'New Elude Arrival Request';
@@ -24,3 +26,5 @@ if ($_POST) {
 
   return json_encode($message);
 }
+
+?>
