@@ -1,7 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 button {
@@ -10,6 +16,7 @@ button {
     margin: 0;
     text-decoration: none;
     cursor: pointer;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box;
     outline: none;
 }
@@ -19,8 +26,14 @@ button {
 }
 
 .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     position: absolute;
     top: 0;
@@ -43,6 +56,7 @@ button {
 
 .header__logo {
     height: 30px;
+    -o-object-fit: contain;
     object-fit: contain;
 }
 
@@ -58,7 +72,12 @@ button {
 }
 
 .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     border-top: 1px solid var(--black);
     padding: 30px 0;
@@ -67,8 +86,14 @@ button {
 }
 
 .footer__socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 18px;
 }
@@ -111,6 +136,8 @@ button {
     z-index: -1;
     opacity: 0;
     display: none;
+    -webkit-transition: 0.25s linear opacity;
+    -o-transition: 0.25s linear opacity;
     transition: 0.25s linear opacity;
 }
 
@@ -118,12 +145,19 @@ button {
     opacity: 1;
     pointer-events: all;
     z-index: 13;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
 .modal__content {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -200,7 +234,11 @@ button {
         height: 420px;
         padding: 0 90px;
         background: var(--white);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         position: relative;
         z-index: 3;
@@ -220,6 +258,9 @@ button {
     }
 
     .footer {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
         padding: 22px 0;
     }
@@ -227,6 +268,8 @@ button {
     .footer__desc {
         text-align: left;
         margin: 0 auto 0 0;
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
         order: -1;
         max-width: 100%;
     }
@@ -244,7 +287,7 @@ button {
 
     .container {
         margin-bottom: -120px;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 
     .footer {
